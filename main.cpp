@@ -6,9 +6,9 @@ int main(int argc, char* argv[])
     auto parsedArgs = ParseArgs(argc, argv);
     if (!parsedArgs)
     {
-        std::cout << "Invalid argument!\n";
-        std::cout << "Usage: ./find_replace <search-string> <replace-string>";
-        return 1;
+        std::cout << "Invalid argument!\n";//use consts
+        std::cout << "Usage: ./find_replace <not empty search-string> <replace-string>";
+        return EXIT_FAILURE;
     }
 
     std::string inputString;
@@ -16,5 +16,5 @@ int main(int argc, char* argv[])
     {
         std::cout << FindAndReplace(inputString, parsedArgs->searchString, parsedArgs->replaceString)  << "\n";
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
